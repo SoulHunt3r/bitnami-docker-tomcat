@@ -245,7 +245,7 @@ tomcat_create_tomcat_user() {
     local username=${1:?username is missing}
     local password=${2:-}
 
-    local user_definition="<user username=\"${username}\" password=\"${password}\" roles=\"manager-gui,admin-gui\"/></tomcat-users>"
+    local user_definition="<user username=\"${username}\" password=\"${password}\" roles=\"manager-gui,manager-script,admin-gui\"/></tomcat-users>"
 
     replace_in_file "$TOMCAT_USERS_CONF_FILE" "</tomcat-users>" "$user_definition"
 }
